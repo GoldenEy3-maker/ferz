@@ -1,0 +1,259 @@
+@import 'font.css';
+@import 'var.css';
+@import 'reset.css';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3.125rem repeat(12, [col-start] 8.333%) 3.125rem;
+}
+
+/* Header */
+.header-wrapper {
+  display: grid;
+  grid-template-columns: 73px 1fr auto auto;
+  align-items: center;
+  grid-column: col-start / span 11;
+  gap: 2.5rem;
+  color: hsl(var(--title));
+  padding-top: 1.45rem;
+}
+
+.header-logo {
+  position: fixed;
+}
+
+.header button {
+  margin-left: 1.25rem;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+  grid-column: 2;
+}
+
+/* Intro */
+.intro-wrapper {
+  padding-block: 5rem;
+  grid-column: 3 / span 10;
+}
+
+.intro h1 {
+  max-width: 50rem;
+}
+
+.intro p {
+  max-width: 43rem;
+  margin-bottom: 3.5rem;
+  font-size: var(--xl-fs);
+  line-height: var(--leading-xl);
+}
+
+.intro-images {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+
+/* Titles */
+h1 {
+  font-size: var(--5xl-fs);
+  line-height: var(--leading-5xl);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: var(--4xl-fs);
+  line-height: var(--leading-4xl);
+}
+
+h3 {
+  font-size: var(--3xl-fs);
+  line-height: var(--leading-3xl);
+}
+
+h5 {
+  font-size: var(--2xl-fs);
+  line-height: var(--leading-2xl);
+}
+
+/* Section */
+.section {
+  margin-bottom: 5rem;
+}
+
+.section--title {
+  background-color: hsl(var(--title));
+  color: hsl(var(--background));
+}
+
+.section-text {
+  font-size: var(--lg-xl);
+  line-height: var(--leading-lg);
+  max-width: 53rem;
+}
+
+.section-text > * + * {
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  margin-bottom: 2.5rem;
+  color: hsl(var(--title));
+}
+
+.section-content {
+  margin-top: 3.75rem;
+  display: flex;
+  align-items: stretch;
+}
+
+.section-content > * + * {
+  margin-left: 2.8rem;
+}
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(var(--title));
+  color: hsl(var(--background));
+  padding: 1.875rem 1.875rem 1.25rem;
+}
+
+.section-card__title {
+  max-width: 17.5rem;
+}
+
+.section-card--accent {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--title));
+}
+
+.section-card img {
+  margin-top: auto;
+}
+
+.section-card footer {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  color: hsl(var(--accent));
+}
+
+.section-card--accent footer {
+  color: hsl(var(--title));
+}
+
+.section-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2.125rem;
+  max-width: 20rem;
+}
+
+.section-features-item__icon {
+  display: block;
+  margin-bottom: 0.625rem;
+}
+
+.section-features-item p {
+  font-size: var(--lg-fs);
+  line-height: var(--leading-lg);
+  text-wrap: balance;
+}
+
+.section-arrows {
+  display: grid;
+  grid-template-columns: 3rem 3rem;
+  grid-template-rows: 3rem 3rem;
+  margin-top: auto;
+}
+
+.section-arrows button:first-child {
+  rotate: 180deg;
+  grid-column: 2;
+}
+
+.section-details {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 18.75rem;
+  grid-template-rows: auto 5rem auto;
+  padding: 6.25rem;
+  gap: 4rem;
+}
+
+.section-details p {
+  font-size: var(--lg-fs);
+  line-height: var(--leading-lg);
+  color: hsl(var(--text-on-black));
+}
+
+.section-badge-icon {
+  position: absolute;
+  top: 4.25rem;
+  left: 4.25rem;
+  display: grid;
+  grid-template-columns: 1rem 1rem;
+  grid-template-rows: 1rem 1rem;
+}
+
+.section-details h3 {
+  grid-row: span 2;
+}
+
+.section-details *:last-child {
+  grid-row: span 2;
+}
+
+.section-badge-icon span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: hsl(var(--background));
+}
+
+.section-badge-icon span:first-child {
+  grid-column: 2;
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem.75rem;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--title));
+  padding-inline: 3.125rem;
+  height: 4rem;
+  text-transform: uppercase;
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: hsl(var(--accent));
+  padding: 0;
+}
+
+.btn--title {
+  background-color: hsl(var(--title));
+  color: hsl(var(--background));
+}
+
+.btn--icon {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}

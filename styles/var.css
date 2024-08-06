@@ -1,0 +1,27 @@
+:root {
+  --accent: 80 100% 40%;
+  --background: 0 0% 100%;
+  --title: 0 0% 19%;
+  --label: 0 0% 54%;
+  --text: 0 0% 29%;
+  --text-on-black: 0 0% 80%;
+  --destructive: 9 73% 58%;
+
+  --base-fs: 1rem;
+  --lg-fs: 1.125rem;
+  --xl-fs: 1.5rem;
+  --2xl-fs: 2rem;
+  --3xl-fs: 2.75rem;
+  --4xl-fs: 4rem;
+  --5xl-fs: 6rem;
+
+  --leading-lg: 140%;
+  --leading-xl: 140%;
+  --leading-2xl: 130%;
+  --leading-3xl: 120%;
+  --leading-4xl: 120%;
+  --leading-5xl: 110%;
+
+  font-family: 'HeliosExt', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
