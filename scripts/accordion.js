@@ -1,10 +1,12 @@
-const accordionTriggers = document.querySelectorAll("[data-accordion-trigger]");
+const accordionItems = document.querySelectorAll("[data-accordion-item]");
 
-if (accordionTriggers.length) {
-  accordionTriggers.forEach((trigger) => {
+if (accordionItems.length) {
+  accordionItems.forEach((item) => {
+    const trigger = item.querySelector("[data-accordion-trigger]");
+    if (!trigger) return;
     trigger.addEventListener("click", () => {
-      const isOpen = trigger.dataset.accordionTrigger === "true";
-      trigger.dataset.accordionTrigger = !isOpen;
+      const isOpen = item.dataset.accordionItem === "true";
+      item.dataset.accordionItem = !isOpen;
     });
   });
 }

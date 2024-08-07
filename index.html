@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="assets/logo.svg" sizes="any" type="image/svg+xml" />
+    <script src="scripts/autoresize-textarea.js" defer></script>
+    <script src="scripts/imask.js" defer></script>
+    <script src="scripts/mask-tel.js" defer></script>
+    <script src="scripts/sheet.js" defer></script>
     <title>FERZ</title>
   </head>
   <body>
@@ -48,7 +52,10 @@
             <a href="index.html#contacts">Контакты</a>
           </nav>
           <a href="tel:+79606700056" class="header__tel">+7 960 670 00-56</a>
-          <button type="button" class="btn btn--ghost">
+          <button
+            type="button"
+            class="btn btn--ghost"
+            data-sheet-trigger="order">
             <span>заказать</span>
             <svg
               width="14"
@@ -308,7 +315,10 @@
               и успешно прошла лабораторные испытания.
             </p>
             <footer class="section-content-last__footer">
-              <button type="button" class="btn btn--ghost">
+              <button
+                type="button"
+                class="btn btn--ghost"
+                data-sheet-trigger="order">
                 <span>сотрудничать</span>
                 <svg
                   width="14"
@@ -333,7 +343,10 @@
           <address class="footer-contacts">
             <h3 class="footer-contacts__email">info@ferzworks.ru</h3>
             <h3 class="footer-contacts__tel">+7 (3852) 25-17-16</h3>
-            <button type="button" class="btn btn--ghost">
+            <button
+              type="button"
+              class="btn btn--ghost"
+              data-sheet-trigger="order">
               <span>сотрудничать</span>
               <svg
                 width="14"
@@ -362,5 +375,127 @@
         </div>
       </footer>
     </div>
+    <div class="sheet__overlay" data-sheet-overlay aria-hidden="true"></div>
+    <template data-sheet-template="order">
+      <div class="sheet" data-sheet-root="order">
+        <h2 class="sheet__title">Заказать продукцию</h2>
+        <button
+          type="button"
+          class="btn btn--icon btn--title sheet__close"
+          data-sheet-close>
+          <svg
+            width="24"
+            height="23"
+            viewBox="0 0 24 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 1L11.6786 11.4732L1 21.9464"
+              stroke="currentColor"
+              stroke-width="1.83929" />
+            <path
+              d="M22.6787 1L12.0001 11.4732L22.6787 21.9464"
+              stroke="currentColor"
+              stroke-width="1.83929" />
+          </svg>
+        </button>
+        <form class="form sheet__form">
+          <div class="form-control">
+            <input
+              type="text"
+              placeholder="Имя"
+              name="name"
+              id="name"
+              required
+              autofocus />
+          </div>
+          <div class="form-control">
+            <input
+              type="tel"
+              placeholder="Телефон"
+              name="tel"
+              id="tel"
+              required />
+          </div>
+          <div class="form-control">
+            <textarea
+              name="wishes"
+              id="wishes"
+              data-autoresize
+              class="hidden-scrollbar"
+              placeholder="Пожелания к заказу"></textarea>
+          </div>
+          <button type="button" class="btn" data-sheet-trigger="confirm-order">
+            <span>отправить</span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="bevel" />
+            </svg>
+          </button>
+        </form>
+        <p class="privacy-police">
+          При нажатии на кнопку вы соглашаетесь с
+          <a href="#">Политикой конфиденциальности</a>
+        </p>
+        <span tabindex="0" class="focus-guard" data-focus-guard></span>
+      </div>
+    </template>
+    <template data-sheet-template="confirm-order">
+      <div class="sheet" data-sheet-root="confirm-order">
+        <h2 class="sheet__title">Заявка отправлена!</h2>
+        <button
+          type="button"
+          class="btn btn--icon btn--title sheet__close"
+          data-sheet-close>
+          <svg
+            width="24"
+            height="23"
+            viewBox="0 0 24 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 1L11.6786 11.4732L1 21.9464"
+              stroke="currentColor"
+              stroke-width="1.83929" />
+            <path
+              d="M22.6787 1L12.0001 11.4732L22.6787 21.9464"
+              stroke="currentColor"
+              stroke-width="1.83929" />
+          </svg>
+        </button>
+        <p class="sheet__text">Мы свяжемся с вами в течение 1 часа.</p>
+        <button
+          type="button"
+          class="btn sheet__confirm"
+          data-sheet-close
+          autofocus>
+          <span>Вернуться на главную</span>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="square"
+              stroke-linejoin="bevel" />
+          </svg>
+        </button>
+
+        <span tabindex="0" class="focus-guard" data-focus-guard></span>
+      </div>
+    </template>
   </body>
 </html>
