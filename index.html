@@ -218,28 +218,30 @@
             </footer>
           </div>
         </section>
-        <section class="section section-details container section--title">
+        <section class="section container section--title" id="details">
           <div class="section-wrapper">
-            <span class="squares-badge">
-              <span></span>
-              <span></span>
-            </span>
-            <h3>
-              Наши продукты созданны с учетом экологических принципов, что
-              делает их безопасным как для вас, так и для окружающей среды.
-            </h3>
-            <p>
+            <div class="details-title-wrapper">
+              <span class="squares-badge">
+                <span></span>
+                <span></span>
+              </span>
+              <h3 class="details-title">
+                Наши продукты созданны с учетом экологических принципов, что
+                делает их безопасным как для вас, так и для окружающей среды.
+              </h3>
+            </div>
+            <p class="details-f-p">
               Благодаря натуральным маслам подсолнечника в составе, наше мыло
               обладает нежной кремовой текстурой пены, которая оставляет
               ощущение свежести и чистоты после каждого использования.
             </p>
-            <p>
+            <p class="details-s-p">
               Не вызывает аллергии. Большая часть хозяйственного мыла,
               реализуемого на территории России, изготавливается из животных
               жиров, что придает ему очень специфичный запах и делает его
               использование не привлекательным.
             </p>
-            <p>
+            <p class="details-l-p">
               Мыло содержит увлажняющие компоненты (натуральные глицерины),
               которые помогают сохранить естественный баланс кожи, делая ее
               мягкой и увлажненной даже после частого использования.
@@ -255,85 +257,79 @@
               благодаря своим уникальным свойствам и доступной цене.
             </p>
           </div>
-          <div class="section-features section-features--inline">
-            <div class="section-features-item">
-              <span class="section-features-item__icon"
-                ><svg
-                  width="20"
-                  height="14"
-                  viewBox="0 0 20 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 1.79338H2.91887C2.96988 2.6498 3.33782 3.24641 3.85531 3.60869C4.33124 3.99334 4.93603 4.20419 5.561 4.20337C7.01717 4.20337 8.19761 3.08241 8.19761 1.69962C8.19823 1.28085 8.08775 0.868688 7.87639 0.501162C9.29968 0.499613 10.7218 0.499613 12.1429 0.501162C11.9316 0.868696 11.8211 1.28086 11.8218 1.69962C11.8218 3.08241 13.0022 4.20337 14.4583 4.20337C14.8059 4.20377 15.1502 4.13868 15.4711 4.01188C15.7921 3.88508 16.0834 3.69908 16.3281 3.46465C16.5633 3.25784 16.7565 2.99339 16.89 2.66878C17.0127 2.39102 17.0814 2.09442 17.0928 1.79338H20L17.0448 13.5H2.95529L0 1.79338Z"
-                    fill="#313131" />
-                </svg>
-              </span>
-              <p>
-                B2B — коробками по 32 и 64 куска; B2C — от 1 куска в упаковке.
-                (30 руб.)
-              </p>
-            </div>
-            <div class="section-features-item">
-              <span class="section-features-item__icon"
-                ><svg
-                  width="20"
-                  height="14"
-                  viewBox="0 0 20 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 1.79338H2.91887C2.96988 2.6498 3.33782 3.24641 3.85531 3.60869C4.33124 3.99334 4.93603 4.20419 5.561 4.20337C7.01717 4.20337 8.19761 3.08241 8.19761 1.69962C8.19823 1.28085 8.08775 0.868688 7.87639 0.501162C9.29968 0.499613 10.7218 0.499613 12.1429 0.501162C11.9316 0.868696 11.8211 1.28086 11.8218 1.69962C11.8218 3.08241 13.0022 4.20337 14.4583 4.20337C14.8059 4.20377 15.1502 4.13868 15.4711 4.01188C15.7921 3.88508 16.0834 3.69908 16.3281 3.46465C16.5633 3.25784 16.7565 2.99339 16.89 2.66878C17.0127 2.39102 17.0814 2.09442 17.0928 1.79338H20L17.0448 13.5H2.95529L0 1.79338Z"
-                    fill="#313131" />
-                </svg>
-              </span>
-              <p>Гибкая система скидок для оптовых покупателей</p>
-            </div>
+          <div class="section-features-item section-features-item--first">
+            <span class="section-features-item__icon"
+              ><svg
+                width="20"
+                height="14"
+                viewBox="0 0 20 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0 1.79338H2.91887C2.96988 2.6498 3.33782 3.24641 3.85531 3.60869C4.33124 3.99334 4.93603 4.20419 5.561 4.20337C7.01717 4.20337 8.19761 3.08241 8.19761 1.69962C8.19823 1.28085 8.08775 0.868688 7.87639 0.501162C9.29968 0.499613 10.7218 0.499613 12.1429 0.501162C11.9316 0.868696 11.8211 1.28086 11.8218 1.69962C11.8218 3.08241 13.0022 4.20337 14.4583 4.20337C14.8059 4.20377 15.1502 4.13868 15.4711 4.01188C15.7921 3.88508 16.0834 3.69908 16.3281 3.46465C16.5633 3.25784 16.7565 2.99339 16.89 2.66878C17.0127 2.39102 17.0814 2.09442 17.0928 1.79338H20L17.0448 13.5H2.95529L0 1.79338Z"
+                  fill="#313131" />
+              </svg>
+            </span>
+            <p>
+              B2B — коробками по 32 и 64 куска; B2C — от 1 куска в упаковке.
+              (30 руб.)
+            </p>
           </div>
-          <div class="section-content section-content--production-doc">
+          <div class="section-features-item">
+            <span class="section-features-item__icon"
+              ><svg
+                width="20"
+                height="14"
+                viewBox="0 0 20 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0 1.79338H2.91887C2.96988 2.6498 3.33782 3.24641 3.85531 3.60869C4.33124 3.99334 4.93603 4.20419 5.561 4.20337C7.01717 4.20337 8.19761 3.08241 8.19761 1.69962C8.19823 1.28085 8.08775 0.868688 7.87639 0.501162C9.29968 0.499613 10.7218 0.499613 12.1429 0.501162C11.9316 0.868696 11.8211 1.28086 11.8218 1.69962C11.8218 3.08241 13.0022 4.20337 14.4583 4.20337C14.8059 4.20377 15.1502 4.13868 15.4711 4.01188C15.7921 3.88508 16.0834 3.69908 16.3281 3.46465C16.5633 3.25784 16.7565 2.99339 16.89 2.66878C17.0127 2.39102 17.0814 2.09442 17.0928 1.79338H20L17.0448 13.5H2.95529L0 1.79338Z"
+                  fill="#313131" />
+              </svg>
+            </span>
+            <p>Гибкая система скидок для оптовых покупателей</p>
+          </div>
+          <div class="section-product__img">
             <img
               src="assets/production-method.jpg"
               alt="Фото реализации продукции" />
-            <div class="section-content-wrapper">
-              <p>
-                Изготавливается по ГОСТ 30266-2017. Соответствует требованиям
-                ТР ТС 024/2011. Не содержит животных жиров красителей
-                и консервантов, благодаря чему не вызывает аллергии и является
-                экологически чистым мылом. Наша продукция сертифицирована
-                и успешно прошла лабораторные испытания.
-              </p>
-              <footer class="section-content-wrapper-footer" id="contacts">
-                <button type="button" class="btn btn--ghost">
-                  <span>сотрудничать</span>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
-                      stroke="#87CB00"
-                      stroke-width="2"
-                      stroke-linecap="square"
-                      stroke-linejoin="bevel" />
-                  </svg>
-                </button>
-              </footer>
-            </div>
+          </div>
+          <div class="section-content-last">
+            <p>
+              Изготавливается по ГОСТ 30266-2017. Соответствует требованиям
+              ТР ТС 024/2011. Не содержит животных жиров красителей
+              и консервантов, благодаря чему не вызывает аллергии и является
+              экологически чистым мылом. Наша продукция сертифицирована
+              и успешно прошла лабораторные испытания.
+            </p>
+            <footer class="section-content-last__footer">
+              <button type="button" class="btn btn--ghost">
+                <span>сотрудничать</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
+                    stroke="#87CB00"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="bevel" />
+                </svg>
+              </button>
+            </footer>
           </div>
         </section>
       </main>
-      <footer class="footer container">
+      <footer class="footer container" id="contacts">
         <div class="footer-wrapper">
-          <span class="squares-badge">
-            <span></span>
-            <span></span>
-          </span>
           <address class="footer-contacts">
             <h3 class="footer-contacts__email">info@ferzworks.ru</h3>
             <h3 class="footer-contacts__tel">+7 (3852) 25-17-16</h3>
@@ -353,12 +349,16 @@
                   stroke-linejoin="bevel" />
               </svg>
             </button>
+            <span class="squares-badge">
+              <span></span>
+              <span></span>
+            </span>
           </address>
           <p class="footer__address">
             Алтайский край, г. Барнаул, пр. Космонавтов, 20а.
           </p>
           <p class="copyright">© FERZ, 2024</p>
-          <p class="copyright">Сайт от COUNTRY</p>
+          <p class="license">Сайт от COUNTRY</p>
         </div>
       </footer>
     </div>
