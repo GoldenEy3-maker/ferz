@@ -74,9 +74,6 @@ function openSheet(key, trigger = null) {
   document.addEventListener("keydown", (event) => {
     if (event.code === "Escape") closeSheet(key);
   });
-
-  initializeAutoresizes();
-  initializeTelMask();
 }
 
 document.addEventListener("click", (event) => {

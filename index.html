@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="assets/logo.svg" sizes="any" type="image/svg+xml" />
-    <script src="scripts/autoresize-textarea.js" defer></script>
     <script src="scripts/imask.js" defer></script>
+    <script src="scripts/validation.js" defer></script>
+    <script src="scripts/autoresize-textarea.js" defer></script>
     <script src="scripts/mask-tel.js" defer></script>
+    <script src="scripts/api/create-order.js" defer></script>
     <script src="scripts/sheet.js" defer></script>
     <script src="scripts/card-slider.js" defer></script>
     <title>FERZ</title>
@@ -293,10 +295,7 @@
         <section class="section container section--title" id="details">
           <div class="section-wrapper">
             <div class="details-title-wrapper">
-              <span class="squares-badge">
-                <span></span>
-                <span></span>
-              </span>
+              <span class="squares-badge"> </span>
               <h3 class="details-title">
                 Наши продукты созданны с учетом экологических принципов, что
                 делает их безопасным как для вас, так и для окружающей среды.
@@ -427,10 +426,7 @@
                   stroke-linejoin="bevel" />
               </svg>
             </button>
-            <span class="squares-badge">
-              <span></span>
-              <span></span>
-            </span>
+            <span class="squares-badge"></span>
           </address>
           <p class="footer__address">
             Алтайский край, г. Барнаул, пр. Космонавтов, 20а.
@@ -464,7 +460,11 @@
               stroke-width="1.83929" />
           </svg>
         </button>
-        <form class="form sheet__form">
+        <form
+          class="form sheet__form"
+          method="POST"
+          novalidate
+          data-create-order-form>
           <div class="form-control">
             <input
               type="text"
@@ -472,7 +472,10 @@
               name="name"
               id="name"
               required
+              pattern="[А-ЯЁа-яё]{2,}"
+              data-pattern-text="Данные введены неверно, проверьте еще раз"
               autofocus />
+            <p class="form-control__message"></p>
           </div>
           <div class="form-control">
             <input
@@ -480,7 +483,10 @@
               placeholder="Телефон"
               name="tel"
               id="tel"
+              pattern="\+7\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}"
+              data-pattern-text="Данные введены неверно, проверьте еще раз"
               required />
+            <p class="form-control__message"></p>
           </div>
           <div class="form-control">
             <textarea
@@ -490,7 +496,7 @@
               class="hidden-scrollbar"
               placeholder="Пожелания к заказу"></textarea>
           </div>
-          <button type="button" class="btn" data-sheet-trigger="confirm-order">
+          <button type="submit" class="btn">
             <span>отправить</span>
             <svg
               width="14"
@@ -513,6 +519,11 @@
         </p>
         <span tabindex="0" class="focus-guard" data-focus-guard></span>
       </div>
+      <script>
+        initializeAutoresizes();
+        initializeTelMask();
+        initializeCreateOrder();
+      </script>
     </template>
     <template data-sheet-template="confirm-order">
       <div class="sheet" data-sheet-root="confirm-order">

@@ -1,4 +1,4 @@
-function initializeAutoresizes(root = document) {
+function initializeAutoresizes() {
   const autoresizes = document.querySelectorAll("[data-autoresize]");
 
   if (autoresizes) {

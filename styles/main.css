@@ -34,8 +34,8 @@
 
 .header__logo {
   position: fixed;
-  left: 3.47%;
   top: 1.625rem;
+  padding-left: 3.47%;
 }
 
 .header-nav {
@@ -143,6 +143,7 @@ h5 {
 }
 
 .section-content-last__footer {
+  padding-top: 2rem;
   margin-top: auto;
 }
 
@@ -150,7 +151,7 @@ h5 {
   position: relative;
   grid-column: span 4;
   margin-right: calc(1 / 4 * 100% / 2);
-  height: clamp(25rem, 21.2025rem + 18.9873vw, 43.75rem);
+  height: clamp(25rem, 22.4684rem + 12.6582vw, 37.5rem);
 }
 
 .section-slide--first {
@@ -185,10 +186,11 @@ h5 {
 
 .section-card img {
   margin-top: auto;
+  max-height: 80%;
+  object-fit: contain;
 }
 
 .section-card footer {
-  margin-top: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -279,14 +281,16 @@ h5 {
   grid-template-rows: 1rem 1rem;
 }
 
-.squares-badge span {
+.squares-badge::after,
+.squares-badge::before {
+  content: "";
   display: block;
   width: 1rem;
   height: 1rem;
   background-color: hsl(var(--background));
 }
 
-.squares-badge span:first-child {
+.squares-badge::before {
   grid-column: 2;
 }
 
@@ -670,6 +674,13 @@ h5 {
 
 .form-control textarea:placeholder {
   color: hsl(var(--label));
+}
+
+.form-control__message {
+  /* font-size: 0.625rem;
+  line-height: 140%; */
+  color: hsl(var(--destructive));
+  margin-top: 0.25rem;
 }
 
 /* Footer */
