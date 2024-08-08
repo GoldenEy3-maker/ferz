@@ -9,6 +9,7 @@
     <script src="scripts/imask.js" defer></script>
     <script src="scripts/mask-tel.js" defer></script>
     <script src="scripts/sheet.js" defer></script>
+    <script src="scripts/card-slider.js" defer></script>
     <title>FERZ</title>
   </head>
   <body>
@@ -101,46 +102,104 @@
               работников производственных предприятий и автосервисов.
             </p>
           </div>
-          <a
-            href="product.html"
-            class="section-card section-card--accent section-card--first">
-            <h5 class="section-card__title">Хозяйственное ЭКО-мыло 72%</h5>
-            <img src="assets/card-product-1.png" alt="Фото продукта" />
-            <footer>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.5 19.5005V5.00021M19.5 5.00021H5M19.5 5.00021L5.5 19.0005"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="square"
-                  stroke-linejoin="bevel" />
-              </svg>
-            </footer>
-          </a>
-          <a href="product.html" class="section-card">
-            <h5 class="section-card__title">Мыльный ЭКО-порошок</h5>
-            <img src="assets/card-product-2.png" alt="Фото продукта" />
-            <footer>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.5 19.5005V5.00021M19.5 5.00021H5M19.5 5.00021L5.5 19.0005"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="square"
-                  stroke-linejoin="bevel" />
-              </svg>
-            </footer>
-          </a>
+          <div
+            class="section-slide section-slide--first"
+            data-slider-container="0">
+            <a
+              data-card
+              href="product.html"
+              class="section-card"
+              aria-hidden="true">
+              <h5 class="section-card__title">Хозяйственное ЭКО-мыло 72%</h5>
+              <img src="assets/card-product-1.png" alt="Фото продукта" />
+              <footer>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.5 19.5005V5.00021M19.5 5.00021H5M19.5 5.00021L5.5 19.0005"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="bevel" />
+                </svg>
+              </footer>
+            </a>
+            <a
+              data-card
+              href="product.html"
+              class="section-card"
+              aria-hidden="true">
+              <h5 class="section-card__title">Хозяйственное ЭКО-мыло 72%</h5>
+              <img src="assets/card-product-2.png" alt="Фото продукта" />
+              <footer>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.5 19.5005V5.00021M19.5 5.00021H5M19.5 5.00021L5.5 19.0005"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="bevel" />
+                </svg>
+              </footer>
+            </a>
+          </div>
+          <div class="section-slide" data-slider-container="0">
+            <a
+              href="product.html"
+              class="section-card"
+              data-card
+              aria-hidden="true">
+              <h5 class="section-card__title">Мыльный ЭКО-порошок</h5>
+              <img src="assets/card-product-2.png" alt="Фото продукта" />
+              <footer>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.5 19.5005V5.00021M19.5 5.00021H5M19.5 5.00021L5.5 19.0005"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="bevel" />
+                </svg>
+              </footer>
+            </a>
+            <a
+              href="product.html"
+              class="section-card"
+              data-card
+              aria-hidden="true">
+              <h5 class="section-card__title">Мыльный ЭКО-порошок</h5>
+              <img src="assets/card-product-1.png" alt="Фото продукта" />
+              <footer>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.5 19.5005V5.00021M19.5 5.00021H5M19.5 5.00021L5.5 19.0005"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="bevel" />
+                </svg>
+              </footer>
+            </a>
+          </div>
           <div class="section-content-last">
             <div class="section-features">
               <div class="section-features-item">
@@ -196,7 +255,10 @@
               </div>
             </div>
             <footer class="section-content-last__footer section-arrows">
-              <button type="button" class="btn btn--title btn--icon">
+              <button
+                type="button"
+                class="btn btn--title btn--icon"
+                data-slide-next>
                 <svg
                   width="12"
                   height="21"
@@ -209,7 +271,10 @@
                     stroke-width="2" />
                 </svg>
               </button>
-              <button type="button" class="btn btn--title btn--icon">
+              <button
+                type="button"
+                class="btn btn--title btn--icon"
+                data-slide-prev>
                 <svg
                   width="12"
                   height="21"
