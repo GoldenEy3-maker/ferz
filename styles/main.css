@@ -27,29 +27,30 @@
 }
 
 /* Header */
-.header-wrapper {
-  display: grid;
-  grid-template-columns: 73px 1fr auto auto;
-  align-items: center;
-  grid-column: full-width;
-  gap: 1.85rem;
+.header {
   color: hsl(var(--title));
   padding-top: 2.5rem;
 }
 
-.header-logo {
+.header__logo {
   position: fixed;
-}
-
-.header button {
-  margin-left: 1.25rem;
+  left: 3.47%;
+  top: 1.625rem;
 }
 
 .header-nav {
   display: flex;
   align-items: center;
   gap: 1.875rem;
-  grid-column: 2;
+  grid-column: main-content / span 7;
+}
+
+.header-actions {
+  grid-column: 11 / full-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 /* Intro */
