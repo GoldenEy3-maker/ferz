@@ -510,7 +510,7 @@ h5 {
   line-height: var(--leading-lg);
   padding-block: 1.25rem;
   min-height: 0;
-  transition: padding-block 300ms ease;
+  transition: padding 300ms ease;
 }
 
 [data-accordion-item=false] .features-accordion-item-body__wrapper {
@@ -536,30 +536,6 @@ h5 {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
   animation: sheetOpen ease forwards;
-}
-
-@keyframes sheetOpen {
-  from {
-    right: -20%;
-    opacity: 0;
-  }
-
-  to {
-    right: 0%;
-    opacity: 1;
-  }
-}
-
-@keyframes sheetClose {
-  from {
-    right: 0;
-    opacity: 1;
-  }
-
-  to {
-    right: -20%;
-    opacity: 0;
-  }
 }
 
 .sheet[aria-hidden=true] {
@@ -677,8 +653,6 @@ h5 {
 }
 
 .form-control__message {
-  /* font-size: 0.625rem;
-  line-height: 140%; */
   color: hsl(var(--destructive));
   margin-top: 0.25rem;
 }
@@ -725,6 +699,33 @@ h5 {
   line-height: var(--leading-lg);
   grid-column: 9 / span 3;
 }
+
+/* Keyframes */
+@keyframes sheetOpen {
+  from {
+    right: -20%;
+    opacity: 0;
+  }
+
+  to {
+    right: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes sheetClose {
+  from {
+    right: 0;
+    opacity: 1;
+  }
+
+  to {
+    right: -20%;
+    opacity: 0;
+  }
+}
+
+
 
 /* Media */
 @media (max-width: 991px) {
