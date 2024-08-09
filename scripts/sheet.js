@@ -4,6 +4,21 @@ const _sheetAnimationDuration = 300;
 
 let _usedSheetTrigger = null;
 
+function lockScroll() {
+  document.body.style.setProperty(
+    "--scrollbar-width",
+    window.innerWidth - document.body.offsetWidth + "px"
+  );
+  document.body.classList.add("lock-scroll");
+}
+
+function unlockScroll() {
+  setTimeout(
+    () => document.body.classList.remove("lock-scroll"),
+    _sheetAnimationDuration
+  );
+}
+
 function removeSheet(sheet) {
   setTimeout(() => sheet.remove(), _sheetAnimationDuration);
 }
@@ -13,7 +28,7 @@ function closeSheet(key) {
   if (!sheet) return;
   sheet.ariaHidden = true;
   sheetOverlay.ariaHidden = true;
-  document.body.style.overflow = "auto";
+  unlockScroll();
   removeSheet(sheet);
   if (_usedSheetTrigger) _usedSheetTrigger.focus();
 }
@@ -27,6 +42,7 @@ function openSheet(key, trigger = null) {
     });
   } else {
     _usedSheetTrigger = trigger;
+    lockScroll();
   }
 
   const template = document.querySelector(`[data-sheet-template=${key}]`);
@@ -58,7 +74,6 @@ function openSheet(key, trigger = null) {
     closeSheet(key);
   });
 
-  document.body.style.overflow = "hidden";
   document.documentElement.appendChild(templateContent);
 
   if (autofocuses.length) {

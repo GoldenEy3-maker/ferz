@@ -33,6 +33,16 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+body.lock-scroll {
+  overflow: hidden;
+}
+
+@supports not (scrollbar-gutter: stable) {
+  body.lock-scroll {
+    padding-right: var(--scrollbar-width, 0);
+  }
+}
+
 a,
 a:link,
 a:visited,
