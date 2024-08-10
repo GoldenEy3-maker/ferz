@@ -4,21 +4,6 @@ const _sheetAnimationDuration = 300;
 
 let _usedSheetTrigger = null;
 
-function lockScroll() {
-  document.body.style.setProperty(
-    "--scrollbar-width",
-    window.innerWidth - document.body.offsetWidth + "px"
-  );
-  document.body.classList.add("lock-scroll");
-}
-
-function unlockScroll() {
-  setTimeout(
-    () => document.body.classList.remove("lock-scroll"),
-    _sheetAnimationDuration
-  );
-}
-
 function removeSheet(sheet) {
   setTimeout(() => sheet.remove(), _sheetAnimationDuration);
 }
@@ -28,7 +13,8 @@ function closeSheet(key) {
   if (!sheet) return;
   sheet.ariaHidden = true;
   sheetOverlay.ariaHidden = true;
-  unlockScroll();
+  if (!document.querySelector("[data-burger-root]"))
+    unlockScroll(_sheetAnimationDuration);
   removeSheet(sheet);
   if (_usedSheetTrigger) _usedSheetTrigger.focus();
 }
@@ -80,6 +66,8 @@ function openSheet(key, trigger = null) {
     autofocuses.forEach((node) => {
       node.focus();
     });
+  } else {
+    focusableElements?.[0].focus();
   }
 
   focusGuard.addEventListener("focus", () => {

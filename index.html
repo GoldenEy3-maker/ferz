@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="assets/logo.svg" sizes="any" type="image/svg+xml" />
     <script src="scripts/imask.js" defer></script>
+    <script src="scripts/main.js" defer></script>
     <script src="scripts/validation.js" defer></script>
     <script src="scripts/autoresize-textarea.js" defer></script>
     <script src="scripts/mask-tel.js" defer></script>
+    <script src="scripts/burger.js" defer></script>
     <script src="scripts/sheet.js" defer></script>
     <script src="scripts/card-slider.js" defer></script>
     <script src="scripts/ajax/create-order.js" defer></script>
@@ -57,7 +59,7 @@
           <a href="tel:+79606700056" class="header__tel">+7 960 670 00-56</a>
           <button
             type="button"
-            class="btn btn--ghost header__action"
+            class="btn btn--ghost"
             data-sheet-trigger="order">
             <span>заказать</span>
             <svg
@@ -73,6 +75,14 @@
                 stroke-linecap="square"
                 stroke-linejoin="bevel" />
             </svg>
+          </button>
+        </div>
+        <div class="header-burger">
+          <button
+            type="button"
+            class="btn btn--title btn--icon header-burger__trigger"
+            data-burger-trigger>
+            <span></span>
           </button>
         </div>
       </header>
@@ -344,8 +354,8 @@
               </svg>
             </span>
             <p>
-              B2B — коробками по 32 и 64 куска; B2C — от 1 куска в упаковке.
-              (30 руб.)
+              B2B — коробками по 32 и 64 куска; <br />
+              B2C — от 1 куска в упаковке. (30 руб.)
             </p>
           </div>
           <div class="section-features-item">
@@ -405,8 +415,8 @@
       <footer class="footer container" id="contacts">
         <div class="footer-wrapper">
           <address class="footer-contacts">
-            <h3 class="footer-contacts__email">info@ferzworks.ru</h3>
-            <h3 class="footer-contacts__tel">+7 (3852) 25-17-16</h3>
+            <h2 class="footer-contacts__email">info@ferzworks.ru</h2>
+            <h2 class="footer-contacts__tel">+7 (3852) 25-17-16</h2>
             <button
               type="button"
               class="btn btn--ghost"
@@ -570,6 +580,60 @@
           </svg>
         </button>
 
+        <span tabindex="0" class="focus-guard" data-focus-guard></span>
+      </div>
+    </template>
+    <template data-burger-template>
+      <div data-burger-root class="header-burger-content">
+        <div class="header-burger__close">
+          <button
+            class="btn btn--title btn--icon"
+            type="button"
+            data-burger-close>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.06384 1.06372L10.152 9.97709L1.06384 18.8905"
+                stroke="white" />
+              <path
+                d="M19.5138 1.06396L10.4256 9.97734L19.5138 18.8907"
+                stroke="white" />
+            </svg>
+          </button>
+        </div>
+        <nav class="header-burger__nav">
+          <a href="index.html#products" data-burger-close>Продукция</a>
+          <a href="index.html#production" data-burger-close>Реализация</a>
+          <a href="index.html#contacts" data-burger-close>Контакты</a>
+        </nav>
+        <footer class="header-burger-footer">
+          <div class="header-burger-footer__tel">
+            <a href="tel:+79606700056">+7 960 670 00-56</a>
+          </div>
+          <button
+            type="button"
+            class="btn btn--ghost"
+            data-sheet-trigger="order">
+            <span>заказать</span>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 10.5V1.5M11 1.5H2M11 1.5L2 10.5"
+                stroke="#87CB00"
+                stroke-width="2"
+                stroke-linecap="square"
+                stroke-linejoin="bevel" />
+            </svg>
+          </button>
+        </footer>
         <span tabindex="0" class="focus-guard" data-focus-guard></span>
       </div>
     </template>
