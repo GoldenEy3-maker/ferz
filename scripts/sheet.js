@@ -64,10 +64,14 @@ function openSheet(key, trigger = null) {
 
   if (autofocuses.length) {
     autofocuses.forEach((node) => {
-      node.focus();
+      node.focus({
+        preventScroll: true,
+      });
     });
   } else {
-    focusableElements?.[0].focus();
+    focusableElements?.[0].focus({
+      preventScroll: true,
+    });
   }
 
   focusGuard.addEventListener("focus", () => {

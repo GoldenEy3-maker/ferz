@@ -105,7 +105,7 @@
   z-index: 40;
   width: 100%;
   background-color: hsl(var(--background));
-  padding: 1rem;
+  padding: 1rem 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -128,7 +128,7 @@
 .header-burger__nav {
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  gap: 1rem;
   font-size: var(--2xl-fs);
 }
 
@@ -149,7 +149,7 @@
 
 /* Intro */
 .intro {
-  margin-block: 9.875rem 12.5rem;
+  margin-block: clamp(6.25rem, 4.9736rem + 5.446vw, 9.875rem) clamp(6.25rem, 4.0493rem + 9.3897vw, 12.5rem);
 }
 
 .intro__title {
@@ -206,7 +206,7 @@ h5 {
 }
 
 .section {
-  margin-bottom: 12.5rem;
+  margin-bottom: clamp(6.25rem, 4.0493rem + 9.3897vw, 12.5rem);
 }
 
 .section-text {
@@ -319,7 +319,7 @@ h5 {
 }
 
 .section--title {
-  margin-bottom: 15rem;
+  margin-bottom: clamp(9.375rem, 7.3944rem + 8.4507vw, 15rem);
 }
 
 .section--title .section-wrapper {
@@ -414,7 +414,7 @@ h5 {
 }
 
 .product-page>*+* {
-  margin-top: 8.75rem;
+  margin-top: clamp(6.25rem, 5.3697rem + 3.7559vw, 8.75rem);
 }
 
 .section-product-intro .section-title {
@@ -676,6 +676,13 @@ h5 {
 
 .sheet__close {
   grid-column: 13;
+  width: clamp(2.5rem, 2.3239rem + 0.7512vw, 3rem);
+  height: clamp(2.5rem, 2.3239rem + 0.7512vw, 3rem);
+}
+
+.sheet__close svg {
+  width: 50%;
+  height: 50%;
 }
 
 .sheet__form {
@@ -1002,10 +1009,6 @@ h5 {
 
   .header-nav {
     display: none;
-  }
-
-  .intro {
-    margin-top: 6.25rem;
   }
 
   .intro__text {
