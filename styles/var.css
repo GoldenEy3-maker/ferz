@@ -15,12 +15,7 @@
   --4xl-fs: 4rem;
   --5xl-fs: 6rem;
 
-  --leading-lg: 140%;
-  --leading-xl: 140%;
-  --leading-2xl: 130%;
-  --leading-3xl: 120%;
-  --leading-4xl: 120%;
-  --leading-5xl: 110%;
+  line-height: 1.4;
 
   font-family: 'HeliosExt', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';

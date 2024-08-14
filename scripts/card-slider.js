@@ -1,65 +1,21 @@
-const nextTrigger = document.querySelector("[data-slide-next]");
-const prevTrigger = document.querySelector("[data-slide-prev]");
-const sliderContainers = document.querySelectorAll("[data-slider-container]");
-const firstContainer = sliderContainers[0];
-const secondContainer = sliderContainers[1];
-const firstCards = firstContainer.querySelectorAll("[data-card]");
-const secondCards = secondContainer.querySelectorAll("[data-card]");
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  slidesPerView: 2,
+  spaceBetween: "3.125%",
+  speed: 600,
+});
 
-const firstIndex = parseInt(firstContainer.dataset.sliderContainer);
-const secondIndex = parseInt(secondContainer.dataset.sliderContainer);
+const nextSlideTrigger = document.querySelector("[data-slide-next]");
+const prevSlideTrigger = document.querySelector("[data-slide-prev]");
 
-firstCards[firstIndex].ariaHidden = false;
-secondCards[secondIndex].ariaHidden = false;
+swiper.on("progress", () => {
+  prevSlideTrigger.disabled = swiper.isBeginning;
+  nextSlideTrigger.disabled = swiper.isEnd;
+});
 
-function resetCards() {
-  firstCards.forEach((el) => (el.ariaHidden = true));
-  secondCards.forEach((el) => (el.ariaHidden = true));
-}
-
-function inrementIndexes() {
-  let firstIndex = parseInt(firstContainer.dataset.sliderContainer);
-  let secondIndex = parseInt(secondContainer.dataset.sliderContainer);
-
-  firstIndex = firstIndex === firstCards.length - 1 ? 0 : firstIndex + 1;
-  secondIndex = secondIndex === secondCards.length - 1 ? 0 : secondIndex + 1;
-
-  firstContainer.dataset.sliderContainer = firstIndex;
-  secondContainer.dataset.sliderContainer = secondIndex;
-
-  return [firstIndex, secondIndex];
-}
-
-function decrementIndexes() {
-  let firstIndex = parseInt(firstContainer.dataset.sliderContainer);
-  let secondIndex = parseInt(secondContainer.dataset.sliderContainer);
-
-  firstIndex = firstIndex === 0 ? firstCards.length - 1 : firstIndex - 1;
-  secondIndex = secondIndex === 0 ? secondCards.length - 1 : secondIndex - 1;
-
-  firstContainer.dataset.sliderContainer = firstIndex;
-  secondContainer.dataset.sliderContainer = secondIndex;
-
-  return [firstIndex, secondIndex];
-}
-
-function slideNext(event) {
-  const [firstIndex, secondIndex] = inrementIndexes();
-
-  resetCards();
-
-  firstCards[firstIndex].ariaHidden = false;
-  secondCards[secondIndex].ariaHidden = false;
-}
-
-function slidePrev() {
-  const [firstIndex, secondIndex] = decrementIndexes();
-
-  resetCards();
-
-  firstCards[firstIndex].ariaHidden = false;
-  secondCards[secondIndex].ariaHidden = false;
-}
-
-nextTrigger.addEventListener("click", slideNext);
-prevTrigger.addEventListener("click", slidePrev);
+nextSlideTrigger.addEventListener("click", () => {
+  swiper.slideNext();
+});
+prevSlideTrigger.addEventListener("click", () => {
+  swiper.slidePrev();
+});

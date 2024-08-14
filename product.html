@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="assets/logo.svg" sizes="any" type="image/svg+xml" />
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="scripts/imask.js" defer></script>
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/validation.js" defer></script>
-    <script src="scripts/accordion.js" defer></script>
-    <script src="scripts/autoresize-textarea.js" defer></script>
-    <script src="scripts/mask-tel.js" defer></script>
-    <script src="scripts/burger.js" defer></script>
-    <script src="scripts/sheet.js" defer></script>
+    <script src="scripts/main.js"></script>
     <script src="scripts/ajax/create-order.js" defer></script>
     <title>FERZ</title>
   </head>
@@ -51,33 +48,41 @@
           </svg>
         </a>
         <nav class="header-nav">
-          <a href="index.html#products">Продукция</a>
-          <a href="index.html#production">Реализация</a>
-          <a href="index.html#contacts">Контакты</a>
+          <a href="index.html#products" class="anima">Продукция</a>
+          <a href="index.html#production" class="anima" data-delay="0.3"
+            >Реализация</a
+          >
+          <a href="index.html#contacts" class="anima" data-delay="0.4"
+            >Контакты</a
+          >
         </nav>
         <div class="header-actions">
-          <a href="tel:+79606700056" class="header__tel">+7 960 670 00-56</a>
+          <a href="tel:+79606700056" class="header__tel anima" data-delay="0.5"
+            >+7 960 670 00-56</a
+          >
           <button
             type="button"
-            class="btn btn--ghost"
+            class="btn btn--ghost anima"
+            data-delay="0.6"
             data-sheet-trigger="order">
             <span>заказать</span>
             <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
+              width="17"
+              height="17"
+              class="btn__fixed-icon"
+              viewBox="0 0 17 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
-                stroke="currentColor"
+                d="M13 13V4M13 4H4M13 4L4 13"
+                stroke="#87CB00"
                 stroke-width="2"
                 stroke-linecap="square"
                 stroke-linejoin="bevel" />
             </svg>
           </button>
         </div>
-        <div class="header-burger">
+        <div class="header-burger anima">
           <button
             type="button"
             class="btn btn--title btn--icon header-burger__trigger"
@@ -88,11 +93,12 @@
       </header>
       <main class="product-page">
         <section class="section section-product-intro container">
-          <div class="go-back-link">
+          <div class="go-back-link anima">
             <a href="index.html" class="btn btn--ghost">
               <svg
                 width="24"
                 height="24"
+                class="btn__fixed-icon"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -110,26 +116,36 @@
               <span>На главную</span>
             </a>
           </div>
-          <h2 class="section-title">Мыло «Сила подсолнуха»</h2>
-          <div class="section-product-intro__img">
+          <h2 class="section-title span-lines">
+            <span class="span-line"
+              ><span class="span-line-inner">Мыло «Сила подсолнуха»</span></span
+            >
+          </h2>
+          <div
+            class="section-product-intro__img image-parallax anima"
+            data-delay="0.3">
             <img src="assets/product-image.jpg" alt="Фото продукта" />
           </div>
           <div class="section-content-last">
-            <p>
+            <p class="anima" data-delay="0.4">
               Продукт создан с учётом всех потребностей — идеальное решение для
               дачников, пенсионеров,домохозек.
             </p>
             <footer class="section-content-last__footer">
-              <button type="button" class="btn" data-sheet-trigger="order">
-                <span>заказать</span>
+              <button
+                type="button"
+                class="btn anima"
+                data-sheet-trigger="order">
+                <span>ЗАКАЗАТЬ</span>
                 <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
+                  width="17"
+                  height="17"
+                  class="btn__fixed-icon"
+                  viewBox="0 0 17 17"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
-                    d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
+                    d="M13 13V4M13 4H4M13 4L4 13"
                     stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="square"
@@ -140,38 +156,67 @@
           </div>
         </section>
         <section class="section container">
-          <h3 class="section-title">Мыльный ЭКО-порошок 72%</h3>
+          <h3 class="section-title span-lines">
+            <span class="span-line"
+              ><span class="span-line-inner">Мыльный</span></span
+            >
+            <span class="span-line"
+              ><span class="span-line-inner" data-delay="0.2"
+                >ЭКО-порошок</span
+              ></span
+            >
+            <span class="span-line"
+              ><span class="span-line-inner" data-delay="0.3"> 72% </span></span
+            >
+          </h3>
           <div class="section-text">
-            <p>
+            <p class="anima">
               Забота о здоровье и окружающей среде! Натуральный состав
               и эко-упаковка соответствуют высоким стандартам экологичности.
             </p>
           </div>
           <div class="product-properties">
-            <span class="product-properties__label">Состав:</span>
-            <p class="product-properties__text">
+            <span class="product-properties__label anima" data-delay="0.3"
+              >Состав:</span
+            >
+            <p class="product-properties__text anima" data-delay="0.3">
               жирные кислоты подсолнечного масла, вода, кальцинированная сода,
               каустическая сода, перекись водорода, лецитин, глицерин.
             </p>
-            <hr class="separator" />
-            <span class="product-properties__label">ГОСТ:</span>
-            <p class="product-properties__text">
+            <hr class="separator anima" data-delay="0.3" />
+            <span class="product-properties__label anima" data-delay="0.4"
+              >ГОСТ:</span
+            >
+            <p class="product-properties__text anima" data-delay="0.4">
               соответствует требованиям ТР ТС 024/2011 техническому регламенту
               на масложировую продукцию.
             </p>
-            <hr class="separator" />
-            <span class="product-properties__label">Масса:</span>
-            <p class="product-properties__text">200 гр.</p>
-            <hr class="separator" />
-            <span class="product-properties__label">Срок хранения:</span>
-            <p class="product-properties__text">5 лет</p>
-            <hr class="separator" />
+            <hr class="separator anima" data-delay="0.4" />
+            <span class="product-properties__label anima" data-delay="0.5"
+              >Масса:</span
+            >
+            <p class="product-properties__text anima" data-delay="0.5">
+              200 гр.
+            </p>
+            <hr class="separator anima" data-delay="0.5" />
+            <span class="product-properties__label anima" data-delay="0.6"
+              >Срок хранения:</span
+            >
+            <p class="product-properties__text anima" data-delay="0.6">5 лет</p>
+            <hr class="separator anima" data-delay="0.6" />
           </div>
         </section>
         <section class="section container">
-          <h3 class="section-title">Преимущества</h3>
+          <h3 class="section-title span-lines">
+            <span class="span-line"
+              ><span class="span-line-inner">Преимущества</span></span
+            >
+          </h3>
           <div class="features-accordion">
-            <div class="features-accordion-item" data-accordion-item="true">
+            <div
+              class="features-accordion-item anima"
+              data-delay="0.3"
+              data-accordion-item="false">
               <button
                 type="button"
                 class="features-accordion-item__head"
@@ -219,7 +264,10 @@
                 </div>
               </div>
             </div>
-            <div class="features-accordion-item" data-accordion-item="false">
+            <div
+              class="features-accordion-item anima"
+              data-delay="0.4"
+              data-accordion-item="false">
               <button
                 type="button"
                 class="features-accordion-item__head"
@@ -247,7 +295,10 @@
                 </div>
               </div>
             </div>
-            <div class="features-accordion-item" data-accordion-item="false">
+            <div
+              class="features-accordion-item anima"
+              data-delay="0.5"
+              data-accordion-item="false">
               <button
                 type="button"
                 class="features-accordion-item__head"
@@ -300,7 +351,10 @@
                 </div>
               </div>
             </div>
-            <div class="features-accordion-item" data-accordion-item="false">
+            <div
+              class="features-accordion-item anima"
+              data-delay="0.6"
+              data-accordion-item="false">
               <button
                 type="button"
                 class="features-accordion-item__head"
@@ -348,7 +402,10 @@
                 </div>
               </div>
             </div>
-            <div class="features-accordion-item" data-accordion-item="false">
+            <div
+              class="features-accordion-item anima"
+              data-delay="0.7"
+              data-accordion-item="false">
               <button
                 type="button"
                 class="features-accordion-item__head"
@@ -385,7 +442,10 @@
                 </div>
               </div>
             </div>
-            <div class="features-accordion-item" data-accordion-item="false">
+            <div
+              class="features-accordion-item anima"
+              data-delay="0.8"
+              data-accordion-item="false">
               <button
                 type="button"
                 class="features-accordion-item__head"
@@ -423,34 +483,53 @@
       <footer class="footer container" id="contacts">
         <div class="footer-wrapper">
           <address class="footer-contacts">
-            <h3 class="footer-contacts__email">info@ferzworks.ru</h3>
-            <h3 class="footer-contacts__tel">+7 (3852) 25-17-16</h3>
+            <span class="squares-badge anim"></span>
+            <h2 class="footer-contacts__email span-lines">
+              <a href="mailto:info@ferzworks.ru "
+                ><span class="span-line"
+                  ><span class="span-line-inner">info@ferzworks.ru</span></span
+                ></a
+              >
+            </h2>
+            <h2 class="footer-contacts__tel span-lines">
+              <a href="tel:+73852251716 "
+                ><span class="span-line"
+                  ><span class="span-line-inner" data-delay="0.2"
+                    >+7 (3852) 25-17-16</span
+                  ></span
+                ></a
+              >
+            </h2>
             <button
               type="button"
-              class="btn btn--ghost"
+              class="btn btn--ghost anima"
               data-sheet-trigger="order">
               <span>сотрудничать</span>
               <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                class="btn__fixed-icon"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
+                  d="M13 13V4M13 4H4M13 4L4 13"
                   stroke="#87CB00"
                   stroke-width="2"
                   stroke-linecap="square"
                   stroke-linejoin="bevel" />
               </svg>
             </button>
-            <span class="squares-badge"></span>
           </address>
-          <p class="footer__address">
-            Алтайский край, г. Барнаул, пр. Космонавтов, 20а.
+          <p class="footer__address anima">
+            Алтайский край, г. Барнаул, <br />
+            пр. Космонавтов, 20а.
           </p>
-          <p class="copyright">© FERZ, 2024</p>
-          <p class="license">Сайт от COUNTRY</p>
+          <p class="copyright anima">© FERZ, 2024</p>
+          <p class="license anima">
+            Сайт от
+            <a href="https://countryagency.ru/" target="_blank">COUNTRY</a>
+          </p>
         </div>
       </footer>
     </div>
@@ -517,13 +596,14 @@
           <button type="submit" class="btn">
             <span>отправить</span>
             <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
+              width="17"
+              height="17"
+              class="btn__fixed-icon"
+              viewBox="0 0 17 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
-                d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
+                d="M13 13V4M13 4H4M13 4L4 13"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="square"
@@ -567,27 +647,6 @@
           </svg>
         </button>
         <p class="sheet__text">Мы свяжемся с вами в течение 1 часа.</p>
-        <button
-          type="button"
-          class="btn sheet__confirm"
-          data-sheet-close
-          autofocus>
-          <span>Вернуться на главную</span>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13 12.5V1.5M13 1.5H2M13 1.5L2 12.5"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="square"
-              stroke-linejoin="bevel" />
-          </svg>
-        </button>
-
         <span tabindex="0" class="focus-guard" data-focus-guard></span>
       </div>
     </template>

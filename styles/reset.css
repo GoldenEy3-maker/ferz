@@ -11,9 +11,11 @@
   border: none;
 }
 
+
+
 html {
   color-scheme: light;
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
   scroll-behavior: smooth;
 }
 
@@ -31,17 +33,14 @@ body {
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
+
 }
 
 body.lock-scroll {
   overflow: hidden;
+  padding-right: var(--scrollbar-width, 0);
 }
 
-@supports not (scrollbar-gutter: stable) {
-  body.lock-scroll {
-    padding-right: var(--scrollbar-width, 0);
-  }
-}
 
 a,
 a:link,
@@ -79,6 +78,7 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 input,
