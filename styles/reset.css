@@ -33,7 +33,10 @@ body {
 
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
+}
 
+body.loading {
+  overflow: hidden;
 }
 
 body.lock-scroll {

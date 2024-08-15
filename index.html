@@ -8,17 +8,18 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
     <script src="scripts/imask.js" defer></script>
     <script src="scripts/anime.min.js" defer></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" defer></script>
     <script src="scripts/card-slider.js" defer></script>
     <script src="scripts/ajax/create-order.js" defer></script>
     <title>FERZ</title>
   </head>
-  <body>
+  <body class="loading">
+    <div class="page-loader">
+      <span class="loader"></span>
+    </div>
     <div class="wrapper">
       <header class="header container">
         <a href="index.html" class="header__logo">
@@ -100,53 +101,62 @@
         <section class="intro container">
           <h1 class="intro__title span-lines">
             <span class="span-line"
-              ><span class="span-line-inner" data-delay="0.1">Сила</span></span
+              ><span class="span-line-inner">Сила</span></span
             >
           </h1>
           <h1 class="intro__title span-lines">
             <span class="span-line"
-              ><span class="span-line-inner" data-delay="0.2"
+              ><span class="span-line-inner" data-delay="0.1"
                 >Чистоты</span
               ></span
             >
           </h1>
           <h1 class="intro__title span-lines">
             <span class="span-line"
-              ><span class="span-line-inner" data-delay="0.3">Алтая</span></span
+              ><span class="span-line-inner" data-delay="0.2">Алтая</span></span
             >
           </h1>
           <p class="intro__text anima">
-            Производство алтайского хозяйственного эко-мыла FERZ из&nbsp;масел
+            Производитель натуральных алтайских эко-продуктов из&nbsp;масел
             подсолнечника
           </p>
           <div class="intro__img intro__img--first image-parallax anima">
             <img src="assets/intro-1.jpg" alt="Фото семьи" />
           </div>
-          <div
-            class="intro__img intro__img--last image-parallax anima"
-            data-delay="0.3">
+          <div class="intro__img intro__img--last image-parallax anima">
             <img src="assets/intro-2.jpg" alt="Фото мыла" />
           </div>
         </section>
         <section class="section container" id="products">
           <h2 class="section-title span-lines">
             <span class="span-line"
-              ><span class="span-line-inner">Продукция</span></span
+              ><span class="span-line-inner">Только</span></span
+            >
+            <span class="span-line"
+              ><span class="span-line-inner" data-delay="0.1"
+                >натуральные</span
+              ></span
+            >
+            <span class="span-line"
+              ><span class="span-line-inner" data-delay="0.2"
+                >компоненты</span
+              ></span
             >
           </h2>
           <div class="section-text">
             <p class="anima">
-              Продукт создан с учетом всех потребностей — идеальное решение для
-              дачников, пенсионеров и домохозяек.
+              Продукт создан с&nbsp;учетом всех потребностей&nbsp;&mdash;
+              идеальное решение для дачников, пенсионеров и&nbsp;домохозяек.
             </p>
-            <p class="anima" data-delay="0.3">
-              Успешно справляется со сложными загрязнениями — идеально для
-              работников производственных предприятий и автосервисов.
+            <p class="anima">
+              Успешно справляется со&nbsp;сложными загрязнениями&nbsp;&mdash;
+              идеально для работников производственных предприятий
+              и&nbsp;автосервисов.
             </p>
           </div>
-          <div class="swiper anima">
+          <div class="swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" data-paralax-mouse-root>
+              <div class="swiper-slide anima" data-paralax-mouse-root>
                 <a href="product.html" class="section-card">
                   <h5
                     class="section-card__title"
@@ -178,7 +188,7 @@
                   </footer>
                 </a>
               </div>
-              <div class="swiper-slide" data-paralax-mouse-root>
+              <div class="swiper-slide anima" data-paralax-mouse-root>
                 <a href="product.html" class="section-card">
                   <h5
                     class="section-card__title"
@@ -210,7 +220,7 @@
                   </footer>
                 </a>
               </div>
-              <div class="swiper-slide" data-paralax-mouse-root>
+              <div class="swiper-slide anima" data-paralax-mouse-root>
                 <a href="product.html" class="section-card">
                   <h5
                     class="section-card__title"
@@ -242,7 +252,7 @@
                   </footer>
                 </a>
               </div>
-              <div class="swiper-slide" data-paralax-mouse-root>
+              <div class="swiper-slide anima" data-paralax-mouse-root>
                 <a href="product.html" class="section-card">
                   <h5
                     class="section-card__title"
@@ -278,7 +288,7 @@
           </div>
           <div class="section-content-last">
             <div class="section-features">
-              <div class="section-features-item anima" data-delay>
+              <div class="section-features-item anima">
                 <span class="section-features-item__icon"
                   ><svg
                     width="20"
@@ -293,9 +303,12 @@
                       fill="#313131" />
                   </svg>
                 </span>
-                <p>Экологичность — безопасен для вас и окружающей среды</p>
+                <p>
+                  Экологичность&nbsp;&mdash; безопасен для вас и&nbsp;окружающей
+                  среды
+                </p>
               </div>
-              <div class="section-features-item anima" data-delay="0.3">
+              <div class="section-features-item anima">
                 <span class="section-features-item__icon"
                   ><svg
                     width="20"
@@ -310,9 +323,9 @@
                       fill="#313131" />
                   </svg>
                 </span>
-                <p>Натуральный состав — только природные масла</p>
+                <p>Натуральный состав&nbsp;&mdash; только природные масла</p>
               </div>
-              <div class="section-features-item anima" data-delay="0.4">
+              <div class="section-features-item anima">
                 <span class="section-features-item__icon"
                   ><svg
                     width="20"
@@ -327,11 +340,14 @@
                       fill="#313131" />
                   </svg>
                 </span>
-                <p>Без животного жира и SLS — не вызывает аллергии</p>
+                <p>
+                  Без животного жира и&nbsp;SLS&nbsp;&mdash; не&nbsp;вызывает
+                  аллергии
+                </p>
               </div>
             </div>
             <footer class="section-content-last__footer section-arrows">
-              <div class="anima section-arrow" data-delay="0.5">
+              <div class="anima section-arrow">
                 <button
                   type="button"
                   class="btn btn--title btn--icon"
@@ -377,25 +393,27 @@
             <div class="details-title-wrapper">
               <span class="squares-badge anima"> </span>
               <h3 class="details-title anima">
-                Наши продукты созданны с учетом экологических принципов, что
-                делает их безопасным как для вас, так и для окружающей среды.
+                Наши продукты созданны с&nbsp;учетом экологических принципов,
+                что делает их&nbsp;безопасным как для вас, так и&nbsp;для
+                окружающей среды.
               </h3>
             </div>
-            <p class="details-f-p anima" data-delay="0.3">
-              Благодаря натуральным маслам подсолнечника в составе, наше мыло
-              обладает нежной кремовой текстурой пены, которая оставляет
-              ощущение свежести и чистоты после каждого использования.
+            <p class="details-f-p anima">
+              Благодаря натуральным маслам подсолнечника в&nbsp;составе, наше
+              мыло обладает нежной кремовой текстурой пены, которая оставляет
+              ощущение свежести и&nbsp;чистоты после каждого использования.
             </p>
-            <p class="details-s-p anima" data-delay="0.4">
-              Не вызывает аллергии. Большая часть хозяйственного мыла,
-              реализуемого на территории России, изготавливается из животных
-              жиров, что придает ему очень специфичный запах и делает его
-              использование не привлекательным.
+            <p class="details-s-p anima">
+              Не&nbsp;вызывает аллергии. Большая часть хозяйственного мыла,
+              реализуемого на&nbsp;территории России, изготавливается
+              из&nbsp;животных жиров, что придает ему очень специфичный запах
+              и&nbsp;делает его использование не&nbsp;привлекательным.
             </p>
-            <p class="details-l-p anima" data-delay="0.5">
+            <p class="details-l-p anima">
               Мыло содержит увлажняющие компоненты (натуральные глицерины),
-              которые помогают сохранить естественный баланс кожи, делая ее
-              мягкой и увлажненной даже после частого использования.
+              которые помогают сохранить естественный баланс кожи, делая
+              ее&nbsp;мягкой и&nbsp;увлажненной даже после частого
+              использования.
             </p>
           </div>
         </section>
@@ -408,8 +426,9 @@
           <div class="section-text">
             <p class="anima">
               Предлагаем стать дистрибьюторами нашего хозяйственного мыла
-              из масел подсолнечника. Продукт уже завоевал доверие потребителей
-              благодаря своим уникальным свойствам и доступной цене.
+              из&nbsp;масел подсолнечника. Продукт уже завоевал доверие
+              потребителей благодаря своим уникальным свойствам и&nbsp;доступной
+              цене.
             </p>
           </div>
           <div class="section-features-item section-features-item--first anima">
@@ -428,11 +447,13 @@
               </svg>
             </span>
             <p>
-              B2B — коробками по 32 и 64 куска; <br />
-              B2C — от 1 куска в упаковке. (30 руб.)
+              B2B&nbsp;&mdash; коробками по&nbsp;32&nbsp;и&nbsp;64&nbsp;куска;
+              <br />
+              B2C&nbsp;&mdash; от&nbsp;1&nbsp;куска в&nbsp;упаковке.
+              (30&nbsp;руб.)
             </p>
           </div>
-          <div class="section-features-item anima" data-delay="0.3">
+          <div class="section-features-item anima">
             <span class="section-features-item__icon"
               ><svg
                 width="20"
@@ -449,20 +470,18 @@
             </span>
             <p>Гибкая система скидок для оптовых покупателей</p>
           </div>
-          <div
-            class="section-product__img image-parallax anima"
-            data-delay="0.4">
+          <div class="section-product__img image-parallax anima">
             <img
               src="assets/production-method.jpg"
               alt="Фото реализации продукции" />
           </div>
           <div class="section-content-last">
-            <p class="anima" data-delay="0.5">
-              Изготавливается по ГОСТ 30266-2017. Соответствует требованиям
-              ТР ТС 024/2011. Не содержит животных жиров красителей
-              и консервантов, благодаря чему не вызывает аллергии и является
-              экологически чистым мылом. Наша продукция сертифицирована
-              и успешно прошла лабораторные испытания.
+            <p class="anima">
+              Изготавливается по&nbsp;ГОСТ 30266-2017. Соответствует требованиям
+              ТР&nbsp;ТС&nbsp;024/2011. Не&nbsp;содержит животных жиров
+              красителей и&nbsp;консервантов, благодаря чему не&nbsp;вызывает
+              аллергии и&nbsp;является экологически чистым мылом. Наша продукция
+              сертифицирована и&nbsp;успешно прошла лабораторные испытания.
             </p>
             <footer class="section-content-last__footer">
               <button
@@ -621,7 +640,7 @@
           </button>
         </form>
         <p class="privacy-police">
-          При нажатии на кнопку вы соглашаетесь с
+          При нажатии на&nbsp;кнопку вы&nbsp;соглашаетесь&nbsp;с
           <a href="#">Политикой конфиденциальности</a>
         </p>
         <span tabindex="0" class="focus-guard" data-focus-guard></span>
@@ -655,7 +674,9 @@
               stroke-width="1.83929" />
           </svg>
         </button>
-        <p class="sheet__text">Мы свяжемся с вами в течение 1 часа.</p>
+        <p class="sheet__text">
+          Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;течение 1&nbsp;часа.
+        </p>
         <span tabindex="0" class="focus-guard" data-focus-guard></span>
       </div>
     </template>
@@ -714,5 +735,11 @@
       </div>
     </template>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+      document.body.classList.remove("loading");
+    </script>
   </body>
 </html>

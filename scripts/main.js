@@ -120,17 +120,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnTitles.length) {
     btnTitles.forEach((btn) => {
       btn.addEventListener("mouseenter", () => {
-        anime({
-          targets: btn,
-          scale: 1.1,
-        });
+        if (!btn.disabled)
+          anime({
+            targets: btn,
+            scale: 1.1,
+          });
       });
 
-      btn.addEventListener("mouseout", () => {
-        anime({
-          targets: btn,
-          scale: 1,
-        });
+      btn.addEventListener("mouseleave", () => {
+        if (!btn.disabled)
+          anime({
+            targets: btn,
+            scale: 1,
+          });
       });
     });
   }
@@ -143,11 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const layers = root.querySelectorAll("[data-paralax-layer]");
 
       function handleParallax(evt) {
-        //размер области просмотра
         const parallaxLeftOffset = root.getBoundingClientRect().left;
         const parallaxTopOffset = root.getBoundingClientRect().top;
 
-        // координаты центра экрана
         const coordX =
           evt.clientX - parallaxLeftOffset - 0.5 * root.offsetWidth;
         const coordY =
@@ -161,14 +161,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      function reset() {
+      function reset(event) {
         layers.forEach((layer) => {
           layer.removeAttribute("style");
         });
       }
 
       root.addEventListener("mousemove", handleParallax);
-      root.addEventListener("mouseout", reset);
+      root.addEventListener("mouseleave", reset);
     });
   }
 
