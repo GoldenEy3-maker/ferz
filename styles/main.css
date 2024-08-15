@@ -75,40 +75,7 @@ html.lenis body {
   border-radius: 4px;
 }
 
-@keyframes bxSpin {
-  17% {
-    border-bottom-right-radius: 3px;
-  }
 
-  25% {
-    transform: translateY(9px) rotate(22.5deg);
-  }
-
-  50% {
-    transform: translateY(18px) scale(1, .9) rotate(45deg);
-    border-bottom-right-radius: 40px;
-  }
-
-  75% {
-    transform: translateY(9px) rotate(67.5deg);
-  }
-
-  100% {
-    transform: translateY(0) rotate(90deg);
-  }
-}
-
-@keyframes shadow {
-
-  0%,
-  100% {
-    transform: scale(1, 1);
-  }
-
-  50% {
-    transform: scale(1.2, 1);
-  }
-}
 
 .wrapper {
   min-height: 100vh;
@@ -121,7 +88,6 @@ html.lenis body {
   margin-inline: auto;
   width: 100%;
 }
-
 
 .hidden-scrollbar {
   -ms-overflow-style: none;
@@ -171,7 +137,27 @@ html.lenis body {
 }
 
 .header__tel {
+  position: relative;
   padding-block: 1rem;
+  overflow: hidden;
+}
+
+.header__tel:after {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0%;
+  background-color: currentColor;
+  width: 100%;
+  height: 1px;
+  border-radius: 9999px;
+  transform-origin: center;
+  scale: 0;
+  transition: scale 300ms ease;
+}
+
+.header__tel:hover:after {
+  scale: 1;
 }
 
 .header-burger {
@@ -1255,6 +1241,41 @@ h5 {
 }
 
 /* Keyframes */
+@keyframes bxSpin {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+
+  50% {
+    transform: translateY(18px) scale(1, .9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow {
+
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
+
 @keyframes burgerClose {
   from {
     opacity: 1;

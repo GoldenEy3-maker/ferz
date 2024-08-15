@@ -116,6 +116,35 @@ function initializeAutoresizes() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.hash) {
+    lenis.scrollTo(window.location.hash);
+  }
+
+  const navLinks = document.querySelectorAll(".header-nav a");
+  if (navLinks.length)
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const hash = link.href.slice(link.href.lastIndexOf("#"));
+        lenis.scrollTo(hash);
+      });
+    });
+
+  // const btnArrowAnim = document.querySelectorAll(".btn-arrow-anim");
+  // if (btnArrowAnim.length) {
+  //   btnArrowAnim.forEach((btn) => {
+  //     const icon = btn.querySelector("svg");
+  //     btn.addEventListener("mouseenter", () => {
+  //       if (!btn.disabled) {
+  //         anime({
+  //           targets: icon,
+  //           translateY: [0, -5, 0],
+  //           translateX: [0, 5, 0],
+  //         });
+  //       }
+  //     });
+  //   });
+  // }
+
   const btnTitles = document.querySelectorAll(".btn--title");
   if (btnTitles.length) {
     btnTitles.forEach((btn) => {
